@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/tools/**",
+                "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.0/**",
+                "${workspaceFolder}/libraries",
+                "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers",
+                "/Applications/Arduino.app/Contents/Java/libraries",
+                "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include",
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/standard",
+                "/Users/alexandrealvaro/Documents/Arduino/libraries/**"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers",
+                    "/Applications/Arduino.app/Contents/Java/",
+                    "/Users/alexandrealvaro/Documents/Arduino/libraries/**",
+                    "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/tools/**",
+                    "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.0/**",
+                    "${workspaceFolder}/libraries",
+                    "${workspaceFolder}/**",
+                    "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers",
+                    "/Applications/Arduino.app/Contents/Java/libraries",
+                    "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include",
+                    "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/standard",
+                    "/Users/alexandrealvaro/Documents/Arduino/libraries/**"
+                ]
+            },
+            "forcedInclude": [
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h"
+            ],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

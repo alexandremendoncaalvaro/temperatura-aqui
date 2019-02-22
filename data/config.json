@@ -1,0 +1,11 @@
+{
+    "wifiSsid":"",
+    "wifiPassword":"",
+    "minutesSleeping":"5",
+    "deviceId":"Alexandre",
+    "mqttServidor":"mqtt.temperaturaaqui.com.br",
+    "mqttPorta":"8883",
+    "mqttUsuario":"admin",
+    "mqttPassword":"SenhaAdministrador123",
+    "mqttTopic":"66cfcc96618140f4a2356d64e40ab496"
+}
