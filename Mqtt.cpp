@@ -48,6 +48,8 @@ bool Connections::mqttConnect()
 			Serial.print(parameters.deviceId);
 		}
 		
+		Serial.print(F(" | "));
+
 		if (mqttConnection)
 		{
 			Serial.println(F("connected!"));

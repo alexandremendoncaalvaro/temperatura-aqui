@@ -2,7 +2,7 @@
     "wifiSsid":"",
     "wifiPassword":"",
     "minutesSleeping":"5",
-    "deviceId":"alexandre",
+    "deviceId":"Alexandre",
     "mqttServidor":"test.mosquitto.org",
     "mqttPorta":"1883",
     "mqttUsuario":"",
