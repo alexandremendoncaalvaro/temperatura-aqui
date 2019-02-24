@@ -8,7 +8,7 @@ void Connections::tick()
 
 void Connections::configModeCallback(WiFiManager *myWifiManager)
 {
-	Serial.println(LOG_BREAK);
+	Serial.println(F("--------------------------"));
 	Serial.println("Entered config mode");
 	connections.ticker.attach(0.2, connections.tick);
 }
@@ -66,11 +66,11 @@ void Connections::wifiConnect(bool onDemandPortal)
 	if (WiFi.isConnected()) {
 		Serial.print(F("MAC: "));
 		Serial.println(WiFi.macAddress());
-		Serial.println(LOG_BREAK);
+		Serial.println(F("--------------------------"));
 		Serial.println();
 		Serial.print(F("WiFi conectado! IP: "));
 		Serial.println(WiFi.localIP());
-		Serial.println(LOG_BREAK);
+		Serial.println(F("--------------------------"));
 		Serial.println();
 	}
 

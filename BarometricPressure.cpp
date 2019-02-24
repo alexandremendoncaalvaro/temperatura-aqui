@@ -18,7 +18,7 @@ AmbientData BarometricPressure::getCurrentData()
 	float temp(NAN), hum(NAN), pres(NAN);
 
 	BME280::TempUnit tempUnit(BME280::TempUnit_Celsius);
-	BME280::PresUnit presUnit(BME280::PresUnit_Pa);
+	BME280::PresUnit presUnit(BME280::PresUnit_hPa);
 
 	bme.read(pres, temp, hum, tempUnit, presUnit);
 
@@ -27,16 +27,6 @@ AmbientData BarometricPressure::getCurrentData()
 		hum,
 		pres
 	};
-
-	//Serial.print("Temp: ");
-	//Serial.print(temp);
-	//Serial.print("*" + String(tempUnit == BME280::TempUnit_Celsius ? 'C' : 'F'));
-	//Serial.print("\t\tHumidity: ");
-	//Serial.print(hum);
-	//Serial.print("% RH");
-	//Serial.print("\t\tPressure: ");
-	//Serial.print(pres);
-	//Serial.println(" Pa");
 
 	return data;
 }

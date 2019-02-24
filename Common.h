@@ -5,9 +5,6 @@
 #include <ArduinoJson.h>
 #include <Ticker.h>
 
-//Debug
-const char LOG_BREAK[] PROGMEM = "--------------------------";
-
 //Time definition
 const long SECOND_S = 1;
 const long MINUTE_S = SECOND_S * 60;

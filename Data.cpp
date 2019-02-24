@@ -91,7 +91,7 @@ bool Parameters::saveParameters()
 
 void Parameters::printParameters()
 {
-	Serial.println(F("----------------------------------"));
+	Serial.println(F("--------------------------"));
 	Serial.println(F("CURRENT PARAMETERS:"));
 
 	Serial.print(F("SSID: "));
@@ -118,7 +118,7 @@ void Parameters::printParameters()
 	Serial.print(F("MQTT Topic: "));
 	Serial.println(parameters.mqttTopic);
 
-	Serial.println(F("----------------------------------"));
+	Serial.println(F("--------------------------"));
 }
 
 bool Parameters::begin()

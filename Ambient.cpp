@@ -38,7 +38,7 @@ void Ambient::tick()
 
 	Serial.print(F("BME:   "));
 	Serial.print(currentPressure);
-	Serial.println(F(" Pa"));
+	Serial.println(F(" hPa"));
 
 	if (ambient.tickCounter > 1)
 	{
@@ -56,7 +56,7 @@ void Ambient::tick()
 	Serial.print(F("Next aquisition in "));
 	Serial.print(ambient.secondsToNextCall);
 	Serial.println(F(" seconds"));
-	Serial.println(LOG_BREAK);
+	Serial.println(F("--------------------------"));
 }
 
 bool Ambient::getAmbientValues()
@@ -81,19 +81,9 @@ bool Ambient::getAmbientValues()
 
 	Serial.print(F("Pressure: "));
 	Serial.print(ambient.ambientData.pressure);
-	Serial.println(F(" Pa"));
+	Serial.println(F(" hPa"));
 
-	Serial.println(LOG_BREAK);
-
-	//if (ambient.ambientData.temperature == -127
-	//	|| ambient.ambientData.humidity == 0
-	//	|| ambient.ambientData.humidity == 100
-	//	|| ambient.ambientData.pressure < 900
-	//	|| ambient.ambientData.pressure > 1100)
-	//{
-	//	Serial.println(F("Inconsistent Data!!!"));
-	//	return false;
-	//}
+	Serial.println(F("--------------------------"));
 
 	return true;
 }

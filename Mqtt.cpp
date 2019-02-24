@@ -2,9 +2,9 @@
 
 void Connections::mqttCallback(char* topic, byte* payload, unsigned int length)
 {
-	Serial.print("Message arrived [");
+	Serial.print(F("Message arrived ["));
 	Serial.print(topic);
-	Serial.print("] ");
+	Serial.print(F("] "));
 
 	for (int i = 0; i < length; i++)
 	{
@@ -46,7 +46,7 @@ bool Connections::mqttConnect()
 		}
 		attempts++;
 	}
-	Serial.println(LOG_BREAK);
+	Serial.println(F("--------------------------"));
 	return mqttClient.connected();
 }
 
@@ -63,8 +63,12 @@ bool Connections::mqttPublishAmbientDataJson(char* baseTopic, AmbientData ambien
 	payload["p"] = (float)((int)(ambientData.pressure * 100) / 100.0);
 	payload.printTo(jsonBufferMessage, sizeof(jsonBufferMessage));
 
-	String topic = String(baseTopic);
-	done = mqttClient.publish(topic.c_str(), jsonBufferMessage);
+	done = mqttClient.publish(baseTopic, jsonBufferMessage);
 
+  	Serial.print(F("Published in "));
+  	Serial.println(baseTopic);
+  	Serial.print(F("Message: "));
+  	Serial.println(jsonBufferMessage);
+  
 	return done;
 }
