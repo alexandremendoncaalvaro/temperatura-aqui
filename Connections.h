@@ -16,7 +16,7 @@ public:
 	unsigned long sleep_time;
 private:
 	Ticker ticker;
-	WiFiClient client;
+	WiFiClientSecure client;
 	PubSubClient mqttClient = PubSubClient(client);
 	void wifiConnect(bool onDemandPortal = false);
 	static void saveConfigCallback();

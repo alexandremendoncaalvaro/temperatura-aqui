@@ -4,6 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/tools/**",
+                "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.4.0/**",
                 "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.0/**",
                 "${workspaceFolder}/libraries",
                 "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers",
@@ -19,6 +20,7 @@
                     "/Applications/Arduino.app/Contents/Java/",
                     "/Users/alexandrealvaro/Documents/Arduino/libraries/**",
                     "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/tools/**",
+                    "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.4.0/**",
                     "/Users/alexandrealvaro/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.0/**",
                     "${workspaceFolder}/libraries",
                     "${workspaceFolder}/**",

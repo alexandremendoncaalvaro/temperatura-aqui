@@ -36,6 +36,7 @@ bool Connections::mqttConnect()
 		if(strcmp(parameters.mqttUser, "") != 0 && strcmp(parameters.mqttPassword, "") != 0 )
 		{
 			mqttConnection = mqttClient.connect(parameters.deviceId, parameters.mqttUser, parameters.mqttPassword);
+			//mqttConnection = mqttClient.connect(parameters.deviceId, "admin", "SenhaAdministrador123");
 			Serial.print(parameters.deviceId);
 			Serial.print(", ");
 			Serial.print(parameters.mqttUser);
@@ -59,8 +60,8 @@ bool Connections::mqttConnect()
 		{
 			Serial.print(F("failed, rc="));
 			Serial.print(mqttClient.state());
-			Serial.println(F(" try again in 3 seconds"));
-			delay(3000);
+			Serial.println(F(" try again in 5 seconds"));
+			delay(5 * SECOND_S);
 		}
 		attempts++;
 	}
@@ -75,13 +76,22 @@ bool Connections::mqttPublishAmbientDataJson(char* baseTopic, AmbientData ambien
 	StaticJsonBuffer<600> jsonBuffer;
 	JsonObject& payload = jsonBuffer.createObject();
 	char jsonBufferMessage[200];
+	
+	char t[5];
+	dtostrf((float)((int)(ambientData.temperature * 10) / 10.0),4,2,t);
 
-	payload["t"] = (float)((int)(ambientData.temperature * 10) / 10.0);
-	payload["u"] = (float)((int)(ambientData.humidity * 10) / 10.0);
-	payload["p"] = (float)((int)(ambientData.pressure * 100) / 100.0);
+	char h[6];
+	dtostrf((float)((int)(ambientData.humidity * 10) / 10.0),5,2,h);
+
+	char p[8];
+	dtostrf((float)((int)(ambientData.pressure * 10) / 10.0),7,2,p);
+
+	payload["t"] = t;
+	payload["u"] = h;
+	payload["p"] = p;
 	payload.printTo(jsonBufferMessage, sizeof(jsonBufferMessage));
 
-	done = mqttClient.publish(baseTopic, jsonBufferMessage);
+	done = mqttClient.publish(baseTopic, jsonBufferMessage, true);
 
   	Serial.print(F("Published in "));
   	Serial.println(baseTopic);
