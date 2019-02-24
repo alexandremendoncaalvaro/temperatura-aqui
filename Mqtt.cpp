@@ -32,7 +32,23 @@ bool Connections::mqttConnect()
 
 		mqttClient.setCallback(mqttCallback);
 
-		if (mqttClient.connect(parameters.deviceId))
+		bool mqttConnection = false;
+		if(strcmp(parameters.mqttUser, "") != 0 && strcmp(parameters.mqttPassword, "") != 0 )
+		{
+			mqttConnection = mqttClient.connect(parameters.deviceId, parameters.mqttUser, parameters.mqttPassword);
+			Serial.print(parameters.deviceId);
+			Serial.print(", ");
+			Serial.print(parameters.mqttUser);
+			Serial.print(", ");			
+			Serial.print(parameters.mqttPassword);
+		}
+		else
+		{
+			mqttConnection = mqttClient.connect(parameters.deviceId);
+			Serial.print(parameters.deviceId);
+		}
+		
+		if (mqttConnection)
 		{
 			Serial.println(F("connected!"));
 			return true;
